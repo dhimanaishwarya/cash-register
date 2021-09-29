@@ -23,7 +23,7 @@ function checkButtonHandler() {
         if (billAmount > 0 && cashGiven > 0) {
             validateAmounts(billAmount, cashGiven);
         } else {
-            showMessageText("Both inputs must be positive numbers.");
+            showMessageText("Both inputs must be greater than zero.");
             hidenotesTable();
         }
     } else if ((bill.value === "") && (cash.value === "")) {
@@ -39,7 +39,7 @@ function validateAmounts(billAmount, cashGiven) {
     if (cashGiven > billAmount) {
         let returnAmount = cashGiven - billAmount;
         messageText.style.display = "block";
-        messageText.innerText = "Return Change = " + returnAmount;
+        messageText.innerText = `Change to be returned to customer : Rs ${returnAmount}`;
         notesTable.style.display = "table";
         calculateChange(returnAmount);
     } else {
