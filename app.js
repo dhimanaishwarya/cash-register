@@ -13,8 +13,8 @@ checkButton.addEventListener("click", checkButtonHandler);
 function checkButtonHandler() {
 
     console.log(typeof (bill));
-    let billAmount = bill.value;
-    let cashGiven = cash.value;
+    let billAmount = Number(bill.value);
+    let cashGiven = Number(cash.value);
 
 
     // input box is empty or not
@@ -36,6 +36,9 @@ function checkButtonHandler() {
 }
 
 function validateAmounts(billAmount, cashGiven) {
+    console.log(typeof cashGiven);
+    console.log(typeof billAmount);
+    console.log(cashGiven > billAmount);
     if (cashGiven > billAmount) {
         let returnAmount = cashGiven - billAmount;
         messageText.style.display = "block";
