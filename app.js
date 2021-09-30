@@ -7,7 +7,7 @@ let trs = document.querySelector("#row");
 let tds = document.querySelectorAll(".notes");
 
 const notes = [2000, 500, 100, 20, 10, 5, 1];
-
+hidenotesTable()
 checkButton.addEventListener("click", checkButtonHandler);
 
 function checkButtonHandler() {
